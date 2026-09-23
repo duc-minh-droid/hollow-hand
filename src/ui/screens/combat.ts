@@ -253,7 +253,7 @@ export function mountCombat(root: HTMLElement, args: { nodeId: string }) {
     const r = pBar.el.getBoundingClientRect();
     return { x: r.left + r.width / 2, y: r.top };
   };
-  const tableCenter = () => ({ x: innerWidth / 2, y: innerHeight * 0.58 });
+  const tableCenter = () => ({ x: innerWidth / 2, y: innerHeight * 0.6 });
 
   // ─────────── FX playback ───────────
   let floating: HTMLElement | null = null; // the card currently on the table

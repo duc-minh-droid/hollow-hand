@@ -11,6 +11,7 @@ export function initTooltips() {
   tip = h('div', { id: 'tip' });
   document.body.append(tip);
   document.addEventListener('pointerover', (e) => {
+    if (e.buttons) return hide(); // never while dragging a card
     const t = (e.target as Element).closest<HTMLElement>('[data-tip]');
     if (!t) return hide();
     tip.innerHTML = `${t.dataset.tipTitle ? `<h4>${t.dataset.tipTitle}</h4>` : ''}<p>${t.dataset.tip}</p>`;
